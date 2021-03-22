@@ -1,0 +1,73 @@
+
+               CBN_intype: warp_mask                     
+                     PONO: True                          	[default: False]
+                   PONO_C: True                          	[default: False]
+           adaptor_kernel: 3                             
+         adaptor_nonlocal: False                         
+       adaptor_res_deeper: False                         
+               adaptor_se: False                         
+                     apex: False                         
+             aspect_ratio: 1.0                           
+                batchSize: 6                             	[default: 4]
+      cache_filelist_read: False                         
+     cache_filelist_write: False                         
+          checkpoints_dir: ./checkpoints                 
+   contain_dontcare_label: True                          
+                crop_size: 256                           
+                 dataroot: ./imgs/ade20k                 	[default: /mnt/blob/Dataset/ADEChallengeData2016/images]
+             dataset_mode: ade20k                        
+            dilation_conv: False                         
+          display_winsize: 256                           
+              domain_rela: False                         
+                 ema_beta: 0.999                         
+                  eqlr_sn: False                         
+                  gpu_ids: 0                             	[default: 0,1,2,3]
+                 how_many: inf                           
+                init_type: xavier                        
+            init_variance: 0.02                          
+                  isTrain: False                         	[default: None]
+                 label_nc: 150                           
+       load_from_opt_file: False                         
+                load_size: 256                           
+               mask_noise: False                         
+                  maskmix: True                          	[default: False]
+             match_kernel: 3                             
+         max_dataset_size: 9223372036854775807           
+                    model: pix2pix                       
+                 nThreads: 0                             	[default: 16]
+                     name: ade20k                        	[default: label2coco]
+                     netG: spade                         
+                      ngf: 64                            
+                  no_flip: True                          
+         no_pairing_check: False                         
+           noise_for_mask: False                         
+                   norm_D: spectralinstance              
+                   norm_E: spectralinstance              
+                   norm_G: spectralspadesyncbatch3x3     
+                output_nc: 3                             
+                    phase: test                          
+          preprocess_mode: resize_and_crop               
+              results_dir: ./results/                    
+             save_per_img: False                         
+           serial_batches: True                          
+                show_corr: False                         
+            show_warpmask: False                         
+                two_cycle: False                         
+            use_attention: True                          	[default: False]
+            use_coordconv: False                         
+                  use_ema: False                         
+       vgg_normal_correct: False                         
+               video_like: False                         
+            warp_bilinear: False                         
+             warp_cycle_w: 0.0                           
+       warp_mask_losstype: direct                        	[default: none]
+               warp_patch: False                         
+              warp_stride: 4                             
+           weight_domainC: 0.0                           
+              which_epoch: latest                        
+                    z_dim: 256                           
+
+dataset [ADE20KDataset] of size 6 was created
+Network [SPADEGenerator] was created. Total number of parameters: 96.7 million. To see the architecture, do print(network).
+Network [NoVGGCorrespondence] was created. Total number of parameters: 59.3 million. To see the architecture, do print(network).
+dict_keys(['label', 'image', 'path', 'self_ref', 'ref', 'label_ref'])
