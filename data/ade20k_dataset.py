@@ -33,8 +33,8 @@ class ADE20KDataset(Pix2pixDataset):
         image_paths = []
         label_paths = []
         for p in all_images:
-            if '_%s_' % phase not in p:
-                continue
+            # if '_%s_' % phase not in p:
+            #     continue
             if p.endswith('.jpg'):
                 image_paths.append(p)
             elif p.endswith('.png'):
@@ -55,6 +55,7 @@ class ADE20KDataset(Pix2pixDataset):
             else:
                 val = [items[1], items[-1]]
             ref_dict[key] = val
-        train_test_folder = ('training', 'validation')
+        # train_test_folder = ('training', 'validation')
+        train_test_folder = ('validation', 'validation')
         return ref_dict, train_test_folder
 

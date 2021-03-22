@@ -86,7 +86,7 @@ class Pix2pixDataset(BaseDataset):
 
         random_p = random.random()
         if random_p < self.real_reference_probability or self.opt.phase == 'test':
-            key = image_path.replace('\\', '/').split('DeepFashion/')[-1] if self.opt.dataset_mode == 'deepfashion' else os.path.basename(image_path)
+            key = os.path.basename(image_path)
             val = self.ref_dict[key]
             if random_p < self.hard_reference_probability:
                 path_ref = val[1]  #hard reference
