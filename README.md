@@ -28,7 +28,19 @@ If you don't want to use mask of exemplar image when testing, you can download m
 sh test_demo_no_mask.sh
 ````
 
-## Training
+## Experiments
+
+I performed image editing by *manipulating the input Semantic Maps* to the CoCosNet, treating the *Original Image* as the **Exemplar Image**
+
+#### Original Setting
+ ![Original Setting](/output/test/ade20k/original.png)
+
+#### Editted Setting
+ ![Editted Setting](/output/test/ade20k/out.png)
+
+ As observed, CoCosNet doesn't perform upto the mark in object based image editing. However, in the paper, authors do mention about successful image editing tasks. For clearity, I used the [scene-parsing network](https://github.com/CSAILVision/semantic-segmentation-pytorch) to generate the semantic maps to get clearer boundaries. 
+
+<!-- ## Training
 
 **Pretrained VGG model** Download from [here](https://drive.google.com/file/d/1fp7DAiXdf0Ay-jANb8f0RHYLTRyjNv4m/view?usp=sharing), move it to `models/`. This model is used to calculate training loss.
 
@@ -40,7 +52,7 @@ sh test_demo_no_mask.sh
 - Run the command, note `dataset_path` is your ade20k root, e.g., `/data/Dataset/ADEChallengeData2016/images`. We use 8 32GB Tesla V100 GPUs for training. You can set `batchSize` to 16, 8 or 4 with fewer GPUs and change `gpu_ids`.
     ````bash
     python train.py --name ade20k --dataset_mode ade20k --dataroot dataset_path --niter 100 --niter_decay 100 --use_attention --maskmix --warp_mask_losstype direct --weight_mask 100.0 --PONO --PONO_C --batchSize 32 --vgg_normal_correct --gpu_ids 0,1,2,3,4,5,6,7
-    ````
+    ```` -->
 
 ## Acknowledgments
 This code borrows heavily from the [official CoCosNet repo](https://github.com/microsoft/CoCosNet).
